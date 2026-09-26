@@ -1,4 +1,4 @@
-# Week 2 — OSINT Data Collection
+# Week 2 - OSINT Data Collection
 
 ## Overview
 
