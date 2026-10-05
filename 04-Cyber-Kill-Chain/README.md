@@ -497,8 +497,8 @@ Incident Response
 
 # 10. Limitations
 
-The investigation is based primarily on publicly available OSINT
-data.
+The investigation is based primarily on publicly available
+information and the attack scenario described in the course materials.
 
 Therefore, some stages of the Cyber Kill Chain cannot be directly
 confirmed.
@@ -511,7 +511,7 @@ In particular:
 - Command and Control communication was not directly observed.
 - The attacker's final objective cannot be fully confirmed.
 
-Therefore, the analysis clearly separates confirmed intelligence from
+Therefore, the analysis clearly separates confirmed information from
 possible attacker behavior.
 
 ---
@@ -521,25 +521,33 @@ possible attacker behavior.
 The Cyber Kill Chain provides a high-level model for understanding the
 progression of a phishing attack.
 
-The investigation of `delivery-usps.vip` demonstrates how CTI sources
-such as VirusTotal, Shodan and MISP can be used to collect, enrich and
-organize phishing infrastructure intelligence.
+The analyzed USPS phishing scenario demonstrates how the seven stages
+of the Cyber Kill Chain can be applied to a real-world phishing
+campaign.
 
 MITRE ATT&CK provides a more detailed mapping of possible attacker
-techniques, while SIEM correlation rules provide practical detection
-opportunities.
+techniques and behaviors.
 
-Combining Cyber Kill Chain, MITRE ATT&CK, CTI and SIEM monitoring
-allows organizations to detect phishing activity at multiple stages
-and improve their overall defensive capabilities.
+By combining the Cyber Kill Chain with MITRE ATT&CK and SIEM
+correlation rules, security teams can better understand, detect and
+respond to phishing attacks at different stages of the attack
+lifecycle.
 
 ---
 
 # 12. Sources
 
-- Lockheed Martin — Cyber Kill Chain
-- MITRE ATT&CK
-- Unit 42 — Detecting Malicious Stockpiled Domains
-- VirusTotal
-- Shodan
-- MISP
+- **Lecture 4 — The Cyber Kill Chain**  
+  Course lecture materials provided by Astana IT University.
+
+- **Lockheed Martin — Cyber Kill Chain**  
+  https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html
+
+- **Lockheed Martin — Gaining the Advantage: Applying Cyber Kill Chain Methodology**  
+  https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/Gaining_the_Advantage_Cyber_Kill_Chain.pdf
+
+- **MITRE ATT&CK — Enterprise Matrix**  
+  https://attack.mitre.org/
+
+- **MITRE ATT&CK Navigator**  
+  https://mitre-attack.github.io/attack-navigator/
