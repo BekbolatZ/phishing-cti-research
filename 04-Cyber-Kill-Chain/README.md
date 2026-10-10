@@ -287,6 +287,36 @@ Techniques marked as "Possible" represent analytical mapping based on
 typical phishing behavior.
 
 ---
+### 6.1 Hunting hypotheses and queries for phishing
+ 
+**Hypothesis A:** users visited a newly registered domain that contains one of our brand keywords (Delivery, Exploitation).
+ 
+```spl
+index=proxy
+| lookup newly_registered_domains domain AS dest_domain OUTPUT age_days
+| where age_days < 30 AND match(dest_domain, "(?i)(<brand1>|<brand2>|login|secure|sso)")
+| stats count values(user) as users by dest_domain
+```
+ 
+**Hypothesis B:** a click on a link in an email is followed by a login POST to a domain not seen before (credential entry).
+ 
+```spl
+index=proxy http_method=POST uri_path IN ("*login*","*signin*","*auth*")
+| stats earliest(_time) as first_seen by dest_domain
+| where first_seen > relative_time(now(), "-1d")
+```
+ 
+**Hypothesis C:** after a login from a new IP, a mailbox rule that forwards or hides messages is created (Installation).
+ 
+```spl
+index=o365 Operation IN ("New-InboxRule","Set-InboxRule")
+| search Parameters="*ForwardTo*" OR Parameters="*DeleteMessage*" OR Parameters="*MoveToFolder*RSS*"
+| table _time UserId ClientIP Parameters
+```
+ 
+These are illustrative queries, so adapt field and index names to the logs your lab environment provides.
+ 
+---
 
 # 7. SIEM Correlation Rules
 
