@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab Simulation — Phishing Awareness Demo</title>
+<style>
+  :root{
+    --bg:#f1f3f6; --card:#ffffff; --ink:#1a1f29; --muted:#5b6472;
+    --line:#e2e6ec; --brand:#1d4e89; --warn-bg:#fff3cd; --warn-ink:#8a6100;
+    --danger:#b5361f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12151b; --card:#1b1f27; --ink:#e8ebf0; --muted:#9aa4b2;
+      --line:#2a2f3a; --brand:#5b9bd5; --warn-bg:#3a3320; --warn-ink:#e8c766;
+      --danger:#e06a52;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    min-height:100vh;display:flex;flex-direction:column}
+  .simbar{background:var(--danger);color:#fff;text-align:center;
+    padding:10px 16px;font-weight:700;font-size:14px;letter-spacing:.3px}
+  .wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    width:100%;max-width:400px;padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+  .logo{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .logo .mark{width:34px;height:34px;border-radius:8px;background:var(--brand);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px}
+  .logo .name{font-weight:700;font-size:18px}
+  .fake-tag{font-size:11px;color:var(--muted);margin-bottom:18px}
+  h1{font-size:17px;margin:0 0 4px}
+  p.sub{margin:0 0 18px;color:var(--muted);font-size:13px}
+  label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+  input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;
+    background:transparent;color:var(--ink);font-size:14px}
+  input:focus{outline:2px solid var(--brand);border-color:var(--brand)}
+  button{width:100%;margin-top:20px;padding:12px;border:0;border-radius:8px;
+    background:var(--brand);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+  .warn{background:var(--warn-bg);color:var(--warn-ink);border-radius:8px;
+    padding:12px 14px;font-size:12.5px;line-height:1.5;margin-top:20px}
+  .result{display:none;margin-top:18px;border:1px dashed var(--danger);
+    border-radius:8px;padding:14px;font-size:13px;line-height:1.55}
+  .result code{background:rgba(127,127,127,.15);padding:1px 5px;border-radius:4px}
+  footer{text-align:center;font-size:11px;color:var(--muted);padding:16px}
+  .att{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+</style>
+</head>
+<body>
+  <div class="simbar">⚠ LAB SIMULATION — NOT A REAL LOGIN PAGE — DO NOT ENTER REAL CREDENTIALS</div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="logo">
+        <div class="mark">📦</div>
+        <div class="name">Parcel Delivery Portal</div>
+      </div>
+      <div class="fake-tag">Fictional service for a threat-hunting exercise. Not affiliated with any real postal or courier company.</div>
+
+      <h1>Sign in to track your delivery</h1>
+      <p class="sub">A delivery attempt failed. Sign in to reschedule.</p>
+
+      <form id="f" onsubmit="return showDemo(event)">
+        <label for="u">Email</label>
+        <input id="u" type="text" autocomplete="off" placeholder="you@example.com">
+        <label for="p">Password</label>
+        <input id="p" type="password" autocomplete="off" placeholder="••••••••">
+        <button type="submit">Sign in</button>
+      </form>
+
+      <div class="result" id="r">
+        <strong>Simulation only — nothing was sent or saved.</strong><br>
+        In a real <span class="att">T1566.002 → T1204.001 → T1056</span> attack, the text
+        typed here would be transmitted to the attacker's server. This page has no
+        network handler: the form does not submit anywhere and the fields stay in the browser.
+      </div>
+
+      <div class="warn">
+        <strong>Why this looks convincing:</strong> urgency ("delivery failed"), a familiar
+        layout, and a request to "sign in". Real red flags users should check: the domain in
+        the address bar, whether the message was expected, and never entering credentials from
+        an email link.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Educational artifact — Introduction to Threat Hunting, Week 6 (ATT&amp;CK: Spearphishing Link, T1566.002).<br>
+    Clearly labelled simulation. Captures nothing. Transmits nothing.
+  </footer>
+
+<script>
+  // No data is collected, stored, or sent anywhere. The form is inert by design.
+  function showDemo(e){
+    e.preventDefault();
+    document.getElementById('u').value = '';
+    document.getElementById('p').value = '';
+    document.getElementById('r').style.display = 'block';
+    return false;
+  }
+</script>
+</body>
+</html>
