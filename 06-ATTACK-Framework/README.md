@@ -104,23 +104,23 @@ Data view `packetbeat`, time range around the run. Field names can differ slight
 
 **Q1 - DNS lookups of the campaign domain**
 
-![Q1](screenshots/01-dns.png)
+![Q1](<img width="676" height="606" alt="Снимок экрана 2026-10-31 110230" src="https://github.com/user-attachments/assets/fc05c7ba-8395-4004-b975-85576df17a21" />)
 
 **Q2 - HTTP requests with Host `delivery-usps.vip` (GET and POST)**
 
-![Q2](screenshots/02-http-get.png)
+![Q2](<img width="677" height="531" alt="Снимок экрана 2026-10-31 110246" src="https://github.com/user-attachments/assets/fb34e08c-8467-4d0d-a6a0-c36de9466230" />)
 
 **Q3 - credential submission (POST /login)**
 
-![Q3](screenshots/03-http-post.png)
+![Q3](<img width="742" height="502" alt="Снимок экрана 2026-10-31 110258" src="https://github.com/user-attachments/assets/fde053fe-65b5-4cbd-97b3-277ca4d78d66" />)
 
 **Q4 - lookalike domains, excluding legitimate `usps.com`**
 
-![Q4](screenshots/04-lookalike.png)
+![Q4](<img width="742" height="601" alt="Снимок экрана 2026-10-31 111114" src="https://github.com/user-attachments/assets/0963198a-98ad-43a3-98f3-6542f182740c" />)
 
 **Control - all `*usps*` lookups, before excluding `usps.com`**
 
-![Control](screenshots/04b-control-usps.png)
+![Control](<img width="742" height="728" alt="Снимок экрана 2026-10-31 111159" src="https://github.com/user-attachments/assets/a3afd70b-7658-44c4-8cdc-e6f433bc6393" />)
 
 **Analysis.**
 - All three simulated victim-side steps were visible in the telemetry: the DNS lookups of the campaign domain (Q1, 3 events), the HTTP requests carrying `Host: delivery-usps.vip` (Q2, 2 events: GET and POST) and the credential submission to `/login` (Q3, 1 event). The simulation was run at about 05:53 UTC; Kibana displayed the events at 01:53 because the VM browser uses UTC-4 (EDT).
