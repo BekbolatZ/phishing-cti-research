@@ -19,7 +19,7 @@
 | Platforms (per ATT&CK) | Identity Provider, Linux, macOS, Office Suite, SaaS, Windows |
 | Source | https://attack.mitre.org/techniques/T1566/002/ |
 
-**Description (own words).** The adversary sends an email that contains a malicious link, hoping the recipient follows it. The link may lead to a credential-harvesting page, a malicious download, or an OAuth / device-code consent page that hands the attacker an access token.
+**Description.** The adversary sends an email that contains a malicious link, hoping the recipient follows it. The link may lead to a credential-harvesting page, a malicious download, or an OAuth / device-code consent page that hands the attacker an access token.
 
 **Why we chose it.** Our group topic is the USPS-themed phishing domain `delivery-usps.vip`. Week 4 mapped the *Delivery* stage of the Kill Chain to T1566; this week we study its link-based sub-technique in depth. ATT&CK also lists a data source of "Application Log Content" for the email side; the network side (what the user's machine does after clicking) is what our lab can observe.
 
