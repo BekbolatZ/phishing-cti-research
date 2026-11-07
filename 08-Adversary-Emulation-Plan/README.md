@@ -97,4 +97,4 @@ The practical results will help evaluate whether the simulated activities can be
 - MITRE CALDERA: https://github.com/mitre/caldera
 - CALDERA Documentation: https://caldera.readthedocs.io/
 - MITRE ATT&CK Navigator: https://mitre-attack.github.io/attack-navigator/
-- - OpenAI ChatGPT: https://chatgpt.com/ — Used as an AI assistant for understanding technical concepts, troubleshooting Docker and CALDERA setup, and preparing the adversary emulation plan.
+- OpenAI ChatGPT: https://chatgpt.com/ — Used as an AI assistant for understanding technical concepts, troubleshooting Docker and CALDERA setup, and preparing the adversary emulation plan.
