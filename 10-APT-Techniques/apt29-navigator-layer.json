@@ -1,0 +1,43 @@
+{
+  "name": "Week 10 - APT29 TTPs (overlap with our project highlighted)",
+  "versions": { "attack": "20", "navigator": "5.1.0", "layer": "4.5" },
+  "domain": "enterprise-attack",
+  "description": "APT29 (Cozy Bear / Midnight Blizzard, SVR) techniques. Red = techniques our group already emulated in Weeks 6-9 on the delivery-usps.vip phishing case. Blue = other APT29 techniques from public reporting (MITRE G0016, Check Point, darkrelay).",
+  "sorting": 0,
+  "layout": { "layout": "side", "showID": true, "showName": true },
+  "hideDisabled": false,
+  "techniques": [
+    { "techniqueID": "T1566", "showSubtechniques": true },
+    { "techniqueID": "T1566.002", "color": "#e60d0d", "comment": "Spearphishing Link - emulated in Week 6 (delivery-usps.vip)" },
+    { "techniqueID": "T1566.001", "color": "#3b7dd8", "comment": "Spearphishing Attachment" },
+    { "techniqueID": "T1204", "showSubtechniques": true },
+    { "techniqueID": "T1204.001", "color": "#e60d0d", "comment": "Malicious Link - emulated in Week 6" },
+    { "techniqueID": "T1105", "color": "#e60d0d", "comment": "Ingress Tool Transfer - emulated in Week 9 (curl download); APT29 used wine.zip download" },
+    { "techniqueID": "T1003", "showSubtechniques": true },
+    { "techniqueID": "T1003.008", "color": "#e60d0d", "comment": "OS Credential Dumping /etc/shadow - emulated in Week 9" },
+    { "techniqueID": "T1059", "showSubtechniques": true },
+    { "techniqueID": "T1059.001", "color": "#3b7dd8", "comment": "PowerShell" },
+    { "techniqueID": "T1047", "color": "#3b7dd8", "comment": "Windows Management Instrumentation" },
+    { "techniqueID": "T1078", "showSubtechniques": true },
+    { "techniqueID": "T1078.004", "color": "#3b7dd8", "comment": "Valid Accounts: Cloud Accounts" },
+    { "techniqueID": "T1110", "showSubtechniques": true },
+    { "techniqueID": "T1110.003", "color": "#3b7dd8", "comment": "Password Spraying" },
+    { "techniqueID": "T1098", "color": "#3b7dd8", "comment": "Account Manipulation" },
+    { "techniqueID": "T1136", "color": "#3b7dd8", "comment": "Create Account" },
+    { "techniqueID": "T1547", "showSubtechniques": true },
+    { "techniqueID": "T1547.001", "color": "#3b7dd8", "comment": "Registry Run Keys / Startup Folder" },
+    { "techniqueID": "T1550", "color": "#3b7dd8", "comment": "Use Alternate Authentication Material" },
+    { "techniqueID": "T1656", "color": "#3b7dd8", "comment": "Impersonation" },
+    { "techniqueID": "T1071", "color": "#3b7dd8", "comment": "Application Layer Protocol (HTTPS C2)" },
+    { "techniqueID": "T1090", "showSubtechniques": true },
+    { "techniqueID": "T1090.002", "color": "#3b7dd8", "comment": "External Proxy (residential proxies)" },
+    { "techniqueID": "T1041", "color": "#3b7dd8", "comment": "Exfiltration Over C2 Channel" }
+  ],
+  "legendItems": [
+    { "label": "Emulated in our project (Weeks 6-9)", "color": "#e60d0d" },
+    { "label": "Other APT29 technique (public reporting)", "color": "#3b7dd8" }
+  ],
+  "metadata": [],
+  "showTacticRowBackground": false,
+  "selectTechniquesAcrossTactics": true
+}
